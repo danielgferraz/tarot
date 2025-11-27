@@ -36,7 +36,6 @@
                 200: '#FCEEB5',
                 100: '#FEF9DA',
               },
-              // Mapping grays to the requested text palette for broad compatibility
               gray: {
                 50:  '#ffffff',
                 100: '#F8F8FF', // [Texto Principal] Branco Suave
@@ -73,18 +72,16 @@
       }
       
       .glass-panel {
-        /* Based on #3B1F50 (59, 31, 80) */
         background: rgba(59, 31, 80, 0.7);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(212, 175, 55, 0.1); /* Subtle gold border */
+        border: 1px solid rgba(212, 175, 55, 0.1);
       }
       
       .custom-scrollbar::-webkit-scrollbar-thumb {
           background-color: #3B1F50;
       }
 
-      /* Animação suave de queda da carta */
       @keyframes drop {
         0% { transform: scale(1.1) translateY(-10px); opacity: 0; }
         100% { transform: scale(1) translateY(0); opacity: 1; }
@@ -96,21 +93,24 @@
   <script type="importmap">
 {
   "imports": {
-    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
     "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "@neondatabase/serverless": "https://aistudiocdn.com/@neondatabase/serverless@^1.0.2",
     "@vercel/node": "https://aistudiocdn.com/@vercel/node@^5.5.13",
-    "@neondatabase/serverless": "https://aistudiocdn.com/@neondatabase/serverless@^1.0.2"
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body class="bg-mystic-900 text-gray-100 overflow-hidden">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
