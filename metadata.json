@@ -1,0 +1,5 @@
+{
+  "name": "MysticTarot Canvas",
+  "description": "Uma aplicação interativa de Tarô para criar tiragens personalizadas, obter interpretações via IA e exportar leituras em PDF.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MysticTarot Canvas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              sans: ['Lato', 'sans-serif'],
+            },
+            colors: {
+              mystic: {
+                950: '#0d0517', // Darker shade for depth
+                900: '#1A0B2E', // [Fundo Principal] Indigo Profundo
+                800: '#3B1F50', // [Superfícies Secundárias] Ametista Mudo
+                700: '#4D2A66', // Lighter surface for hovers
+                600: '#5F357D',
+                500: '#7652d6',
+                400: '#BDB0D0', // Matching Secondary Text for semantic mapping
+                300: '#dcdcdc',
+                100: '#F8F8FF', // Matching Main Text
+              },
+              gold: {
+                600: '#B5922B', // Darker/Pressed
+                500: '#D4AF37', // [Destaque/Ação] Dourado Antigo
+                400: '#EAC54E', // Lighter/Hover
+                300: '#F9D77E',
+                200: '#FCEEB5',
+                100: '#FEF9DA',
+              },
+              // Mapping grays to the requested text palette for broad compatibility
+              gray: {
+                50:  '#ffffff',
+                100: '#F8F8FF', // [Texto Principal] Branco Suave
+                200: '#E6E6FA',
+                300: '#DCDCDC',
+                400: '#BDB0D0', // [Texto Secundário] Lavanda Pálido
+                500: '#8A7B9E',
+                600: '#6d6080',
+                700: '#4b4259',
+                800: '#2a2533',
+                900: '#1A0B2E',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar matching Surface (#3B1F50) and Background (#1A0B2E) */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1A0B2E; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3B1F50; 
+        border-radius: 4px;
+        border: 1px solid #4D2A66;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5F357D; 
+      }
+      
+      .glass-panel {
+        /* Based on #3B1F50 (59, 31, 80) */
+        background: rgba(59, 31, 80, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.1); /* Subtle gold border */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: #3B1F50;
+      }
+
+      /* Animação suave de queda da carta */
+      @keyframes drop {
+        0% { transform: scale(1.1) translateY(-10px); opacity: 0; }
+        100% { transform: scale(1) translateY(0); opacity: 1; }
+      }
+      .animate-drop {
+        animation: drop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-mystic-900 text-gray-100 overflow-hidden">
+    <div id="root"></div>
+  </body>
+</html>
