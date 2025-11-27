@@ -15,7 +15,9 @@
     "react": "^19.2.0",
     "react-markdown": "^10.1.0",
     "@google/genai": "^1.30.0",
-    "html2canvas": "^1.4.1"
+    "html2canvas": "^1.4.1",
+    "@vercel/node": "^5.5.13",
+    "@neondatabase/serverless": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
